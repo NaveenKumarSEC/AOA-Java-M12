@@ -1,7 +1,9 @@
 
 # EX 2D Pattern Matching using Naive Approach.
-## DATE:
+## DATE:05-02-2026
+
 ## AIM:
+
 To write a Java program to for given constraints.
 Given text string with length n and a pattern with length m, the task is to prints all occurrences of pattern in text.
 Note: You may assume that n > m.
@@ -13,24 +15,72 @@ Output: Pattern found at index 10
 
 Input:  text =  "AABAACAADAABAABA", pattern = "AABA"
 Output: Pattern found at index 0, Pattern found at index 9, Pattern found at index 12
-## Algorithm
-1. 
-2. 
-3. 
-4.  
-5.   
+
+## Algorithm:
+
+1. Read the text string and pattern string.
+2. Compute lengths: n = text.length() and m = pattern.length().
+3. Loop i from 0 to n − m (possible starting positions in text).
+4. For each i, compare the pattern with the text starting at position i.
+5. If all characters match (inner loop completes), report the match index i.
+6. Continue until all positions are checked.    
 
 ## Program:
 ```
 /*
 Program to implement Reverse a String
-Developed by: 
-Register Number:  
+Developed by: Naveenkumar M
+Register Number:  212224230182
 */
 ```
+```
+import java.util.Scanner;
 
+public class NaivePatternSearch {
+    public static void search(String text, String pattern)
+    {
+        int n=text.length();
+        int m=pattern.length();
+        
+        for(int i=0;i<n-m+1;i++)
+        {
+            int j;
+            for(j=0;j<m;j++)
+            {
+                if(text.charAt(i+j)!=pattern.charAt(j))
+                {
+                    break;//mismatch
+                }
+            }
+            
+            if(j==m)
+            {
+                System.out.println("Pattern found at index "+i);
+            }
+        }
+    }
+    //Type code here....
+    
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Taking input from the user
+        String text = scanner.nextLine();
+
+        String pattern = scanner.nextLine();
+
+        // Search for pattern in the text
+        search(text, pattern);
+
+        scanner.close();
+    }
+}
+
+```
 ## Output:
 
+<img width="757" height="273" alt="image" src="https://github.com/user-attachments/assets/2150baf2-1e68-41f2-a15b-97efb44af687" />
 
 
 ## Result:
